@@ -1,0 +1,49 @@
+{% extends 'poll/base.html' %}
+
+{% block content %}
+<div class="row">
+    {% if user.is_authenticated %}
+    {% for object in object_list%}
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+
+            <div class="card-body">
+                <p class="card-text"> {{object.name}} </p>
+                <p class="card-text"> {{object.description }} </p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <a href="{% url 'poll:start_poll' object.pk %}" type="button"
+                           class="btn btn-sm btn-outline-secondary">Start</a>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+
+            <div class="card-body">
+                <p class="card-text"> Опросы не доступны </p>
+                <p class="card-text"> Для прохождения опроса авторизуйтесь</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <a href="{% url 'users:login' %}" type="button"
+                           class="btn btn-sm btn-outline-secondary">авторизуйтесь</a>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+
+{% endblock %}

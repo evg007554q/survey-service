@@ -1,0 +1,37 @@
+{% extends 'poll/base.html' %}
+
+{% block content %}
+<div class="row">
+
+    <div class="col-md-8">
+        <div class="card mb-8 shadow-sm">
+            <div class="card-body">
+                <p class="card-text"> {{question}} </p>
+                <p class="card-text"> {{title}} </p>
+                <p class="card-text"> {{title1}} </p>
+                {% for object in object_list %}
+                <p class="card-text"> {{ object }} </p>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% if not next_question %}
+<div class="btn-group">
+    <a href="{% url 'poll:index' %}" type="button"
+       class="btn btn-sm btn-outline-secondary">Выход</a>
+
+</div>
+{% else %}
+<div class="btn-group">
+    <a href="{% url 'poll:next_question' next_question %}" type="button"
+       class="btn btn-sm btn-outline-secondary">Далее</a>
+
+</div>
+{% endif %}
+
+
+{% endblock %}

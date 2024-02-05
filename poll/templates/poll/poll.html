@@ -1,0 +1,33 @@
+{% extends 'poll/base.html' %}
+
+{% block content %}
+<div class="row">
+
+    <div class="col-md-8">
+        <div class="card mb-8 shadow-sm">
+            <div class="card-body">
+                <p class="card-text"> Варианты ответа {{title}} </p>
+                    <form action="{% url 'poll:vote_poll' Question_pk %}" method="POST">
+                        {% csrf_token %}
+                        {% for object in object_list %}
+                            <input type="radio" name="op" id="op{{ object.id }}" value="{{ object.id }}">
+                            <label for="op{{ object.id }}">{{ object.name }}</label>
+                        <br>
+                        {% endfor %}
+                        <input type="submit" value="Сохранить ответ" class="btn btn-secondary ">
+                    </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!--<div class="btn-group">-->
+<!--        <a href="{% url 'poll:vote_poll' Question_pk %}" type="button"-->
+<!--           class="btn btn-sm btn-outline-secondary">Записать ответ</a>-->
+
+<!--    </div>-->
+
+{% endblock %}
