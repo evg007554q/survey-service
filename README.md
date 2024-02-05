@@ -3,12 +3,23 @@
 Работа с приложением:
 Авторизуйтесь 
 ![image](https://github.com/evg007554q/survey-service/assets/131668392/b2436b65-d45b-44e5-a024-0f2c03d8b233)
+
+
 Выберите опрос
 ![image](https://github.com/evg007554q/survey-service/assets/131668392/8dee2536-ed1c-4e03-a4f3-43b23e2ed1ba)
+
+
 Выбирете вариант ответа на вопрос
 ![image](https://github.com/evg007554q/survey-service/assets/131668392/1ebcae9d-3d61-47bc-addd-bfecef60c593)
+
+
+
 после сохранения формируются результаты
 ![image](https://github.com/evg007554q/survey-service/assets/131668392/4be06959-3f96-46b5-bcf1-3ef2a2253229)
+
+
+
+
 
 Настройка приложения:
 
